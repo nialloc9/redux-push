@@ -1,12 +1,7 @@
 Helpers
 =======
 
-This setup has been tested on Ubuntu 16.04.
-
-For version updates please [see version update documentation.](./docs/UPDATES.md) 
- 
-### Notes
-
+Redux middleware for push notifications.
 
 ### Usage
     
@@ -30,12 +25,38 @@ For version updates please [see version update documentation.](./docs/UPDATES.md
         dispatch({
                     type: PUSH_SET,
                     payload: {
-                        message: `hello`,
+                        message: `hello world`,
                         visibility: 'show'
                     }
-        });
+                });
 
-       
+### Changing config
+The configuration can be altered by passing a config object inside the payload object.
+
+        import  { PUSH_SET } from 'redux-push';
+        import newIcon from './newIcon.png';
+        
+        dispatch({
+                    type: PUSH_SET,
+                    payload: {
+                        message: `hello world`,
+                        visibility: 'onPage',
+                        config: {
+                            icon: newIcon,
+                            timeout: 8000,
+                            onClick: window.focus()
+                        }
+                    }
+                });
+
+
+### Visibility
+There are 3 types of ways to show the push notification.
+
+- show - when user is on the page or on a different page. This is the default behaviour
+- onPage - show only when user is on page.
+- hidden - show only when user is on a different page.
+
 ### Testing
 - Run the tests
         

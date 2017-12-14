@@ -14,7 +14,7 @@ const push = ({ dispatch, getState }) => next => action => {
 
     switch (type) {
         case PUSH_SET:
-            const { message, visibility, config } = payload;
+            const { message, visibility = "show", config } = payload;
 
             const pushConfig = {
                 ...defaultConfig,
