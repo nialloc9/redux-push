@@ -1,4 +1,4 @@
-import icon from "../assets/images/logo.png";
+import icon from "../../assets/images/logo.png";
 
 export default {
     icon,
