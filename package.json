@@ -1,0 +1,56 @@
+{
+  "name": "redux-push",
+  "version": "1.0.0",
+  "description": "Redux middleware for push notifications in the browser",
+  "main": "/lib/index.js",
+  "scripts": {
+    "compile": "babel --source-maps -d lib/ src/",
+    "prepublish": "npm run test ; npm run compile",
+    "precommit": "lint-staged",
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|PNG|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/jest/__mocks__/fileMock.js"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --print-width 120 --tab-width 4 --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nialloc9/redux-push.git"
+  },
+  "keywords": [
+    "redux",
+    "push",
+    "notifications"
+  ],
+  "author": "Niall O' Connor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nialloc9/redux-push/issues"
+  },
+  "homepage": "https://github.com/nialloc9/redux-push#readme",
+  "dependencies": {
+    "push.js": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.12.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "jest-fetch-mock": "^1.4.0",
+    "lint-staged": "^6.0.0",
+    "nock": "^9.1.4",
+    "prettier": "^1.9.1"
+  }
+}

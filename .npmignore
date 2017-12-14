@@ -1,0 +1,7 @@
+/node_modules/
+/.idea/
+/src/
+/__tests__/
+/jest/
+/.babelrc
+/.eslintrc
