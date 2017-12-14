@@ -1,6 +1,6 @@
 {
   "name": "redux-push",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Redux middleware for push notifications in the browser",
   "main": "/lib/index.js",
   "scripts": {

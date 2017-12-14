@@ -1,4 +1,4 @@
-Helpers
+Redux Push
 =======
 
 Redux middleware for push notifications.
