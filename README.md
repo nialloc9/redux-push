@@ -4,7 +4,7 @@ Redux middleware for push notifications.
 
 ### Latest stable release
 
-- 1.0.7
+- 1.0.8
 
 ### Usage
 
