@@ -1,3 +1,4 @@
+/* global document */
 import PushNote from "push.js/bin/push";
 import { PUSH_SET } from "./constants/push";
 import defaultConfig from "./config";
@@ -7,13 +8,13 @@ import defaultConfig from "./config";
  * @param getState
  * @constructor
  */
-const push = ({ dispatch, getState }) => next => action => {
+const push = () => next => action => {
     const { type, payload } = action;
 
     PushNote.Permission.request();
 
     switch (type) {
-        case PUSH_SET:
+        case PUSH_SET: {
             const { message, visibility = "show", config } = payload;
 
             const pushConfig = {
@@ -21,22 +22,23 @@ const push = ({ dispatch, getState }) => next => action => {
                 ...config
             };
 
-            //show when user is away
+            // show when user is away
             if (document.visibilityState === "hidden" && visibility === "hidden") {
                 PushNote.create(message, pushConfig);
             }
 
-            //show when user is on page
+            // show when user is on page
             if (document.visibilityState !== "hidden" && visibility === "onPage") {
                 PushNote.create(message, pushConfig);
             }
 
-            //show when user is away or on page
+            // show when user is away or on page
             if (visibility === "show") {
                 PushNote.create(message, pushConfig);
             }
 
             break;
+        }
         default:
             return next(action);
     }
