@@ -1,10 +1,12 @@
+<img src="https://raw.githubusercontent.com/nialloc9/redux-push/master/assets/images/logo.png" alt='redux-push logo' width="100">
+
 # Redux Push
 
 Redux middleware for push notifications.
 
 ### Latest stable release
 
-- 1.0.8
+- 1.1.0
 
 ### Usage
 
@@ -73,6 +75,14 @@ false for rejected.
         import  { onCheckPermission } from 'redux-push';
 
         onCheckPermission()
+
+### open notication settings (CHROME ONLY)
+
+You may want to allow the users quick access to their browsers notification settings.
+
+        import  { CHROME_SETTINGS_PATH } from 'redux-push';
+
+        <a href={CHROME_SETTINGS_PATH}>click here</a>
 
 ### Notes
 
